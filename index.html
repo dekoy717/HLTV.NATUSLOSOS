@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HLTV/NL - Natus Losos CS2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <img
+          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_310%20%281%29-C1zPuHl03jHVdHrD8047HQgiym1YRl.png"
+          alt="Natus Losos Logo"
+        />
+        HLTV/<span class="logo-accent">NL</span>
+      </a>
+      <nav class="nav" id="nav">
+        <a href="#hero" class="active">&#1043;&#1083;&#1072;&#1074;&#1085;&#1072;&#1103;</a>
+        <a href="#players">&#1050;&#1086;&#1084;&#1072;&#1085;&#1076;&#1072;</a>
+        <a href="#academy">&#1040;&#1082;&#1072;&#1076;&#1077;&#1084;&#1080;&#1103;</a>
+        <a href="#news">&#1053;&#1086;&#1074;&#1086;&#1089;&#1090;&#1080;</a>
+        <a href="#tournaments">&#1058;&#1091;&#1088;&#1085;&#1080;&#1088;&#1099;</a>
+        <a href="#matches">&#1052;&#1072;&#1090;&#1095;&#1080;</a>
+      </nav>
+      <button class="burger" onclick="toggleMenu()" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <img
+        class="hero-logo"
+        src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot_310%20%281%29-C1zPuHl03jHVdHrD8047HQgiym1YRl.png"
+        alt="Natus Losos Logo"
+      />
+      <h1>NATUS LOSOS</h1>
+      <p>&#1055;&#1088;&#1086;&#1092;&#1077;&#1089;&#1089;&#1080;&#1086;&#1085;&#1072;&#1083;&#1100;&#1085;&#1072;&#1103; &#1082;&#1086;&#1084;&#1072;&#1085;&#1076;&#1072; &#1087;&#1086; CS2</p>
+    </div>
+  </section>
+
+  <!-- PLAYERS -->
+  <section class="section" id="players">
+    <h2 class="section-title">&#1054;&#1089;&#1085;&#1086;&#1074;&#1085;&#1086;&#1081; &#1089;&#1086;&#1089;&#1090;&#1072;&#1074;</h2>
+    <div class="players-grid" id="players-grid"></div>
+  </section>
+
+  <!-- ACADEMY -->
+  <section class="section" id="academy">
+    <h2 class="section-title">&#1040;&#1082;&#1072;&#1076;&#1077;&#1084;&#1080;&#1103;</h2>
+
+    <div class="academy-tabs">
+      <button class="academy-tab active" onclick="switchAcademyTab('players')" id="tab-players">&#1048;&#1075;&#1088;&#1086;&#1082;&#1080;</button>
+      <button class="academy-tab" onclick="switchAcademyTab('apply')" id="tab-apply">&#1055;&#1086;&#1076;&#1072;&#1090;&#1100; &#1079;&#1072;&#1103;&#1074;&#1082;&#1091;</button>
+    </div>
+
+    <!-- Tab: Academy Players -->
+    <div class="academy-panel active" id="panel-players">
+      <div class="players-grid academy-grid" id="academy-grid"></div>
+    </div>
+
+    <!-- Tab: Apply Form -->
+    <div class="academy-panel" id="panel-apply">
+      <div class="apply-wrapper">
+        <div class="apply-intro">
+          <h3 class="apply-heading">&#1055;&#1088;&#1080;&#1089;&#1086;&#1077;&#1076;&#1080;&#1085;&#1103;&#1081;&#1089;&#1103; &#1082; &#1072;&#1082;&#1072;&#1076;&#1077;&#1084;&#1080;&#1080; Natus Losos</h3>
+          <p class="apply-desc">&#1052;&#1099; &#1080;&#1097;&#1077;&#1084; &#1090;&#1072;&#1083;&#1072;&#1085;&#1090;&#1083;&#1080;&#1074;&#1099;&#1093; &#1080;&#1075;&#1088;&#1086;&#1082;&#1086;&#1074; &#1089; &#1074;&#1099;&#1089;&#1086;&#1082;&#1086;&#1081; &#1084;&#1086;&#1090;&#1080;&#1074;&#1072;&#1094;&#1080;&#1077;&#1081; &#1080; &#1078;&#1077;&#1083;&#1072;&#1085;&#1080;&#1077;&#1084; &#1088;&#1072;&#1079;&#1074;&#1080;&#1074;&#1072;&#1090;&#1100;&#1089;&#1103; &#1074; &#1082;&#1080;&#1073;&#1077;&#1088;&#1089;&#1087;&#1086;&#1088;&#1090;&#1077;. &#1047;&#1072;&#1087;&#1086;&#1083;&#1085;&#1080; &#1079;&#1072;&#1103;&#1074;&#1082;&#1091; &#1080; &#1084;&#1099; &#1089;&#1074;&#1103;&#1078;&#1077;&#1084;&#1089;&#1103; &#1089; &#1090;&#1086;&#1073;&#1086;&#1081;.</p>
+        </div>
+        <form class="apply-form" id="apply-form" onsubmit="submitApplication(event)">
+          <div class="form-group">
+            <label class="form-label" for="field-name">&#1048;&#1084;&#1103; / &#1053;&#1080;&#1082;&#1085;&#1077;&#1081;&#1084;</label>
+            <input class="form-input" type="text" id="field-name" placeholder="&#1053;&#1072;&#1087;&#1088;&#1080;&#1084;&#1077;&#1088;: s1mple" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="field-age">&#1042;&#1086;&#1079;&#1088;&#1072;&#1089;&#1090;</label>
+            <input class="form-input" type="number" id="field-age" placeholder="16" min="14" max="40" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="field-rank">&#1056;&#1072;&#1085;&#1075; (Faceit / Premier)</label>
+            <input class="form-input" type="text" id="field-rank" placeholder="&#1053;&#1072;&#1087;&#1088;&#1080;&#1084;&#1077;&#1088;: Faceit Lvl 10 / 25000 elo" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="field-role">&#1055;&#1088;&#1077;&#1076;&#1087;&#1086;&#1095;&#1080;&#1090;&#1072;&#1077;&#1084;&#1072;&#1103; &#1088;&#1086;&#1083;&#1100;</label>
+            <select class="form-input" id="field-role" required>
+              <option value="" disabled selected>&#1042;&#1099;&#1073;&#1077;&#1088;&#1080; &#1088;&#1086;&#1083;&#1100;</option>
+              <option value="&#1056;&#1080;&#1092;&#1083;&#1077;&#1088;">&#1056;&#1080;&#1092;&#1083;&#1077;&#1088;</option>
+              <option value="&#1057;&#1085;&#1072;&#1081;&#1087;&#1077;&#1088;">&#1057;&#1085;&#1072;&#1081;&#1087;&#1077;&#1088; (AWP)</option>
+              <option value="IGL">IGL</option>
+              <option value="&#1057;&#1072;&#1087;&#1087;&#1086;&#1088;&#1090;">&#1057;&#1072;&#1087;&#1087;&#1086;&#1088;&#1090;</option>
+              <option value="&#1051;&#1091;&#1088;&#1082;&#1077;&#1088;">&#1051;&#1091;&#1088;&#1082;&#1077;&#1088;</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="field-discord">Discord</label>
+            <input class="form-input" type="text" id="field-discord" placeholder="username#1234" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="field-about">&#1054; &#1089;&#1077;&#1073;&#1077;</label>
+            <textarea class="form-input form-textarea" id="field-about" placeholder="&#1056;&#1072;&#1089;&#1089;&#1082;&#1072;&#1078;&#1080; &#1086; &#1089;&#1074;&#1086;&#1105;&#1084; &#1086;&#1087;&#1099;&#1090;&#1077;, &#1076;&#1086;&#1089;&#1090;&#1080;&#1078;&#1077;&#1085;&#1080;&#1103;&#1093; &#1080; &#1087;&#1086;&#1095;&#1077;&#1084;&#1091; &#1093;&#1086;&#1095;&#1077;&#1096;&#1100; &#1074; &#1072;&#1082;&#1072;&#1076;&#1077;&#1084;&#1080;&#1102;" rows="4"></textarea>
+          </div>
+          <button class="form-submit" type="submit">&#1054;&#1090;&#1087;&#1088;&#1072;&#1074;&#1080;&#1090;&#1100; &#1079;&#1072;&#1103;&#1074;&#1082;&#1091;</button>
+        </form>
+        <div class="apply-success" id="apply-success" style="display:none;">
+          <div class="success-icon">&#10003;</div>
+          <h3 class="success-title">&#1047;&#1072;&#1103;&#1074;&#1082;&#1072; &#1086;&#1090;&#1087;&#1088;&#1072;&#1074;&#1083;&#1077;&#1085;&#1072;!</h3>
+          <p class="success-text">&#1052;&#1099; &#1088;&#1072;&#1089;&#1089;&#1084;&#1086;&#1090;&#1088;&#1080;&#1084; &#1090;&#1074;&#1086;&#1102; &#1079;&#1072;&#1103;&#1074;&#1082;&#1091; &#1080; &#1089;&#1074;&#1103;&#1078;&#1077;&#1084;&#1089;&#1103; &#1089; &#1090;&#1086;&#1073;&#1086;&#1081; &#1074; Discord &#1074; &#1090;&#1077;&#1095;&#1077;&#1085;&#1080;&#1077; 48 &#1095;&#1072;&#1089;&#1086;&#1074;.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="section" id="news">
+    <h2 class="section-title">CS2 &#1053;&#1086;&#1074;&#1086;&#1089;&#1090;&#1080;</h2>
+    <div class="news-grid" id="news-grid"></div>
+  </section>
+
+  <!-- TOURNAMENTS -->
+  <section class="section" id="tournaments">
+    <h2 class="section-title">&#1058;&#1091;&#1088;&#1085;&#1080;&#1088;&#1099;</h2>
+    <div class="tournaments-grid" id="tournaments-grid"></div>
+  </section>
+
+  <!-- MATCHES -->
+  <section class="section" id="matches">
+    <h2 class="section-title">&#1052;&#1072;&#1090;&#1095;&#1080;</h2>
+    <div class="matches-list" id="matches-list"></div>
+  </section>
+
+  <!-- MODAL -->
+  <div class="modal-overlay" id="modal">
+    <div class="modal" role="dialog">
+      <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      <div class="modal-header">
+        <img class="modal-avatar" id="modal-avatar" src="" alt="" />
+        <div>
+          <div class="modal-name" id="modal-name"></div>
+          <span class="modal-role-tag" id="modal-role"></span>
+          <div class="player-country" id="modal-country" style="margin-top:10px"></div>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-stats">
+          <div class="stat-item">
+            <div class="stat-value" id="modal-rating"></div>
+            <div class="stat-label">Rating</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="modal-kills"></div>
+            <div class="stat-label">Kills</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-value" id="modal-hs"></div>
+            <div class="stat-label">HS %</div>
+          </div>
+        </div>
+        <p class="modal-bio" id="modal-bio"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    &copy; 2026 Natus Losos. &#1042;&#1089;&#1077; &#1087;&#1088;&#1072;&#1074;&#1072; &#1079;&#1072;&#1097;&#1080;&#1097;&#1077;&#1085;&#1099;.
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
